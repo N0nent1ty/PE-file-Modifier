@@ -1,0 +1,32 @@
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#include		"c:\\masm32\include\resource.h"
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#define	ICO_MAIN	1000
+#define	DLG_MAIN	1000
+#define IDC_INFO	1001
+#define	IDM_MAIN	2000
+#define	IDM_OPEN	2001
+#define	IDM_EXIT	2002
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ICO_MAIN	ICON		"Main.ico"
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+DLG_MAIN DIALOG 50, 50, 250, 140
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Œ£±MÃD¹ê§@"
+MENU IDM_MAIN
+FONT 9, "§ºÅé"
+{
+ CONTROL "", IDC_INFO, "RichEdit20A", 196 | ES_WANTRETURN | WS_CHILD | ES_READONLY
+	 | WS_VISIBLE | WS_BORDER | WS_VSCROLL | WS_TABSTOP, 0, 0, 249, 140
+}
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+IDM_MAIN	menu	discardable
+BEGIN
+	popup	"¤å¥ó(&F)"
+	BEGIN
+		menuitem	"¥´¶}¤å¥ó(&O)...",	IDM_OPEN
+		menuitem	separator
+		menuitem	"°h¥X(&X)",		IDM_EXIT
+	END
+END
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
